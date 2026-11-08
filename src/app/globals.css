@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #172033;
+  --muted: #64748b;
+  --accent: #6254e8;
+  --surface: #ffffff;
+  --background: #f5f6fb;
+}
+
+html,
+body {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--background);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 0 clamp(24px, 8vw, 120px);
+}
+
+.header {
+  display: flex;
+  height: 88px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e8f0;
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 750;
+  letter-spacing: -0.06em;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.hero {
+  width: min(760px, 100%);
+  margin: auto;
+  padding: 96px 0;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  margin: 18px 0;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  letter-spacing: -0.07em;
+  line-height: 1.05;
+}
+
+.intro {
+  max-width: 580px;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: var(--accent);
+  box-shadow: 0 8px 20px #6254e833;
+  color: white;
+}
+
+.button-secondary {
+  border-color: #dfe2ec;
+  background: var(--surface);
+}
+
+.footer {
+  padding: 24px 0;
+  border-top: 1px solid #e6e8f0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 520px) {
+  .page-shell {
+    padding: 0 22px;
+  }
+
+  .header {
+    height: 72px;
+  }
+
+  .hero {
+    padding: 72px 0;
+  }
+}
